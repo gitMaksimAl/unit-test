@@ -1,7 +1,6 @@
 package Lesson_1;
 import java.util.Calendar;
 
-import lib.*;
 
 /**
  * UnitTest
