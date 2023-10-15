@@ -3,12 +3,13 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
-# User-specific files
+# user-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+Lesson_2/gb-code
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -148,6 +149,7 @@ coverage*.xml
 coverage*.info
 
 # Visual Studio code coverage results
+.vscode
 *.coverage
 *.coveragexml
 
