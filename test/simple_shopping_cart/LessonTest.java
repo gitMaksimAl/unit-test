@@ -8,7 +8,6 @@ import static org.assertj.core.api.Assertions.*;
 
 import Lesson_2.simple_shopping_cart.Cart;
 import Lesson_2.simple_shopping_cart.Main;
-import Lesson_2.simple_shopping_cart.Product;
 import Lesson_2.simple_shopping_cart.Shop;
 
 public class LessonTest {

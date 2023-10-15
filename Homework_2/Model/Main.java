@@ -1,5 +1,7 @@
 package Homework_2.Model;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Main {
 
     /*
@@ -21,4 +23,22 @@ public class Main {
              - проверить, что в режиме парковки (сначала testDrive, потом park, т.е эмуляция движения транспорта) машина останавливается (speed = 0)
              - проверить, что в режиме парковки (сначала testDrive, потом park  т.е эмуляция движения транспорта) мотоцикл останавливается (speed = 0)
     */
+
+    public static Motorcycle getMotorcycle() {
+        String[] compnanies = {"Honda", "Yamaha", "Kawasaki", "Suzuki"};
+        String[] models = {"250cc", "600cc", "900cc", "1000cc"};
+        int[] years = {2020, 2021, 2022, 2023};
+        return new Motorcycle(compnanies[ThreadLocalRandom.current().nextInt(0, compnanies.length)],
+                                models[ThreadLocalRandom.current().nextInt(0, models.length)],
+                                years[ThreadLocalRandom.current().nextInt(0, years.length)]);
+    }
+
+    public static Car getCar() {
+        String[] compnanies = {"Honda", "Mitsubishi", "Subaru", "Suzuki"};
+        String[] models = {"1200cc", "1600cc", "2400cc", "3600cc"};
+        int[] years = {2020, 2021, 2022, 2023};
+        return new Car(compnanies[ThreadLocalRandom.current().nextInt(0, compnanies.length)],
+                                models[ThreadLocalRandom.current().nextInt(0, models.length)],
+                                years[ThreadLocalRandom.current().nextInt(0, years.length)]);
+    }
 }
