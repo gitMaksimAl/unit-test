@@ -15,19 +15,29 @@ public class LessonThree {
     public static boolean firstLastSix(int[] arr) {
         return (arr[0] == 6 || arr[arr.length - 1] == 6);
     }
-
+    
     public static void main(String[] args) {
         
     }
 
     public class User {
-        String user;
-        int password;
-        boolean isAuth;
+        private String user;
+        private int password;
+        private boolean isAuth;
+        private boolean isAdmin;
+
+        public User(String name, String passwd, boolean admin) {
+            this.user = name;
+            this.password = passwd.hashCode();
+            this.isAuth = false;
+            this.isAdmin = admin;
+        }
 
         public User(String name, String passwd) {
             this.user = name;
             this.password = passwd.hashCode();
+            this.isAuth = false;
+            this.isAdmin = false;
         }
 
         public boolean auth(String login, String passwd) {
@@ -45,6 +55,12 @@ public class LessonThree {
 
         public void addUser(User newUser) {
             if (newUser.isAuth) this.repo.add(newUser);
+        }
+    
+        public void logoutUsers() {
+            for (User user : this.repo) {
+                if (!user.isAdmin) user.isAuth = false;
+            }
         }
     }
 }
