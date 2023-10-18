@@ -3,16 +3,17 @@ package test;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.ParameterizedTest;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.*;
 
 import Lesson_3.LessonThree;
 import Lesson_3.LessonThree.UserRepository;
 import Lesson_3.LessonThree.User;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 
 public class LessonThreeTests {
 
@@ -75,6 +76,7 @@ public class LessonThreeTests {
         UserRepository repo = instance.new UserRepository();
         User user = instance.new User("Anton", "123456");
         user.auth("Anton", "123456");
+        repo.addUser(user);
         assertThat(repo.repo).contains(user);
     }
 
@@ -84,6 +86,7 @@ public class LessonThreeTests {
         UserRepository repo = instance.new UserRepository();
         User user = instance.new User("Anton", "123456");
         user.auth("Anton", "02022022");
+        repo.addUser(user);
         assertThat(repo.repo).doesNotContain(user);
     }
 }
