@@ -3,8 +3,6 @@ package test;
 
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import Homework_2.Model.Car;
 import Homework_2.Model.Main;
@@ -28,25 +26,17 @@ public class VehiclesTest {
         assertThat(Main.getMotorcycle().getNumWheels()).isEqualTo(2);
     }
 
-    // TODO: not ended
-    @ParameterizedTest
-    @ValueSource(ints = {60, 75})
-    public void testDriveSpeedTest(int a, int b) {
+    @Test
+    public void speedLimitsTest() {
         Car car = Main.getCar();
         Motorcycle moto = Main.getMotorcycle();
         car.testDrive();
-        moto.testDrive();
-        assertThat(car.getSpeed()).isEqualTo(a);
-        assertThat(moto.getSpeed()).isEqualTo(b);
-    }
-
-    @Test
-    public void parkSpeedTest() {
-        Car car = Main.getCar();
-        Motorcycle moto = Main.getMotorcycle();
+        assertThat(car.getSpeed()).isEqualTo(60);
         car.park();
-        moto.park();
         assertThat(car.getSpeed()).isEqualTo(0);
+        moto.testDrive();
+        assertThat(moto.getSpeed()).isEqualTo(75);
+        moto.park();
         assertThat(moto.getSpeed()).isEqualTo(0);
     }
 }
