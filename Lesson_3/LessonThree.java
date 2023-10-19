@@ -44,6 +44,18 @@ public class LessonThree {
             this.isAuth = (this.user.equals(login) && this.password == passwd.hashCode());
             return this.isAuth;
         }
+
+        public boolean isAdmin() {
+            return this.isAdmin;
+        }
+
+        public boolean isLogin() {
+            return this.isAuth;
+        }
+
+        public String getUser() {
+            return user;
+        }
     }
 
     public class UserRepository {
