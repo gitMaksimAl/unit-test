@@ -1,11 +1,9 @@
 package test;
 
-import java.util.Iterator;
-
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
 import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.*;
+import static org.assertj.core.api.Assertions.*;
+
 
 import java.util.*;
 
@@ -18,7 +16,7 @@ class MainTest {
      @Test
     public void simpleTest() {
         // Создаем мок
-        List mockedList = mock(List.class);
+        List<String> mockedList = mock(List.class);
 
         // Используем мок
         mockedList.add("one");
@@ -39,8 +37,8 @@ class MainTest {
           // Arrange
           Iterator iteratorMock = mock(Iterator.class);
           when(iteratorMock.next()).thenReturn("Hello").thenReturn("World");
-          String result = iteratorMock.next() + " " + iteratorMock.next();
-          assertThat(result).isEqualTo("Hello World");
+          String resuString = iteratorMock.next() + " " + iteratorMock.next();
+          assertThat(resuString).isEqualTo("Hello World");
       }
 
 }

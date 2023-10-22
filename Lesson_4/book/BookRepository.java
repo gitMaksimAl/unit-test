@@ -1,4 +1,4 @@
-package seminars.fourth.book;
+package Lesson_4.book;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package seminars.fourth.hotel;
+package Lesson_4.hotel;
 
 public class HotelService {
     public boolean isRoomAvailable(int roomId) {

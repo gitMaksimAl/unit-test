@@ -1,4 +1,4 @@
-package seminars.fourth.message;
+package Lesson_4.message;
 
 public class NotificationService {
     private MessageService messageService;

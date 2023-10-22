@@ -1,4 +1,4 @@
-package seminars.fourth.card;
+package Lesson_4.card;
 
 public class PaymentForm {
     private CreditCard creditCard;
