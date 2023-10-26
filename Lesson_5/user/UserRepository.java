@@ -1,4 +1,4 @@
-package seminars.five.user;
+package Lesson_5.user;
 
 public class UserRepository {
     public String getUserById(int id) {

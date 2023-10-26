@@ -1,4 +1,4 @@
-package seminars.five.user;
+package Lesson_5.user;
 
 public class UserService {
     private final UserRepository userRepository;
