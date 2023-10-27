@@ -10,6 +10,7 @@
 *.userosscache
 *.sln.docstates
 Lesson_2/gb-code
+.idea
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
