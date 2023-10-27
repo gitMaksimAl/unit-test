@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class NoteBook {
+public class PhoneBook {
     private ContactsRepository repository;
     private List<Contact> trash;
     private Scanner scanner;
 
-    public NoteBook(ContactsRepository repo) {
+    public PhoneBook(ContactsRepository repo) {
         this.repository = repo;
         this.trash = new ArrayList<>();
         this.scanner = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class NoteBook {
             newContact.setPhone(phone);
             System.out.println("Email: ");
             input = scanner.nextLine();
-            if (!input.matches("\\w*@\\.\\w{2,3}"))
+            if (!input.matches("\\w*@\\w*\\.\\w{2,3}"))
                 throw new NumberFormatException("Wrong email.");
             newContact.setEmail(input);
             System.out.println("Age: ");
@@ -33,7 +33,7 @@ public class NoteBook {
             input = scanner.nextLine();
             if (!input.matches("\\D*"))
                 throw new NumberFormatException("Wrong last name.");
-            newContact.setLastName(this.scanner.nextLine());
+            newContact.setLastName(input);
         } catch (NumberFormatException e) {
             System.err.println("Try again.");
         }
@@ -64,13 +64,22 @@ public class NoteBook {
     }
 
     public String sendMail(int id) {
-        if (this.repository.read(id).getEmail().isEmpty()) return "400";
-        return "200";
+        try {
+            if (this.repository.read(id).getEmail().matches("\\w*@\\w*\\.\\w{2,3}")) return "200";
+        } catch (NullPointerException nl) {
+            System.err.println("Not have this contact.");
+        }
+        return "400";
     }
 
     public String call(int id) {
-        if (this.repository.read(id).getPhone().isEmpty()) return "Have not number.";
-        return "Hello";
+        try {
+            if (!this.repository.read(id).getPhone().isEmpty())
+                return String.format("Hello its %s", this.repository.read(id).getFirstName());
+        } catch (NullPointerException nl) {
+            System.err.println("Contact phone is null.");
+        }
+        return "Have not number.";
     }
 
     public void print() {
