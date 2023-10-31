@@ -1,0 +1,7 @@
+************* Module ListsComparator
+Homework_6/ListsComparator.py:1:0: C0103: Module name "ListsComparator" doesn't conform to snake_case naming style (invalid-name)
+Homework_6/ListsComparator.py:61:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+
+------------------------------------------------------------------
+Your code has been rated at 9.39/10 (previous run: 9.39/10, +0.00)
+
