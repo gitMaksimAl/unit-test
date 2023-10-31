@@ -74,10 +74,10 @@ def test_type_error():
     Test function compare_by_mean on Exception
     :return: None
     """
-    list1 = (1, 2, 3, 4, 5, 6)
-    list2 = (3, 2, 3, 4, -9, 6)
+    tuple1 = (1, 2, 3, 4, 5, 6)
+    tuple2 = (3, 2, 3, 4, -9, 6)
     with pytest.raises(TypeError):
-        ListsComparator.compare_by_mean(list1, list2)
+        ListsComparator.compare_by_mean(tuple1, tuple2)
 
 
 def test_exit_one():
