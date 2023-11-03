@@ -148,6 +148,7 @@ _TeamCity*
 coverage*.json
 coverage*.xml
 coverage*.info
+Homework_6/htmlcov
 
 # Visual Studio code coverage results
 .vscode
